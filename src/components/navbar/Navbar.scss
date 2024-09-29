@@ -1,0 +1,208 @@
+$dark-bg: #181818;
+$light-bg: #ffffff;
+$nav-height: 80px;
+$text-color-dark: #ffffff;
+$text-color-light: #000000;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+
+$logo-light: '/darklogo.png';
+$logo-dark: '/whitelogo.png';
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $nav-height;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: $text-color-dark;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1000000;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #046e5d);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease;
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 0 0 auto;
+
+    @media (max-width: 768px) {
+      justify-content: space-between;
+    }
+  }
+
+  .navbar-logo {
+    margin-left: 20px;
+
+    img {
+      height: 50px;
+      transition: filter 0.3s ease;
+
+      @media (max-width: 768px) {
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 0;
+    }
+  }
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #11a58d 0%, #046e5d 100%);
+      z-index: -1;
+      transition: background-color 0.3s ease;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $text-color-dark;
+      font-size: 15px;
+      padding: 27px;
+      transition: color 0.3s ease;
+      font-family: 'Noto Kufi Arabic', sans-serif;
+
+      &:hover {
+        color: adjust-color($text-color-dark, $lightness: 20%);
+      }
+    }
+  }
+}
+
+.navbar-scrolled {
+  background-color: $light-bg;
+  color: black;
+
+  .navbar-logo img {
+    content: url($logo-dark);
+  }
+
+  .navbar-links li a {
+    color: black;
+
+    &:hover {
+      color: adjust-color($text-color-light, $lightness: 20%);
+    }
+  }
+
+  .hamburger span {
+    background-color: $text-color-light;
+  }
+}
+
+// Mobile styles
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+
+  @media (max-width: 768px) {
+    display: block;
+    order: 1;
+  }
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: $text-color-dark;
+    transition: 0.3s;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: $dark-bg;
+  transition: right 0.3s ease;
+  z-index: 120;
+
+  &.open {
+    right: 0;
+  }
+
+  .close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: $text-color-dark;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .sidebar-links {
+    list-style: none;
+    padding: 60px 0 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 20px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: $text-color-dark;
+        font-size: 18px;
+        padding: 15px 30px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: adjust-color($text-color-dark, $lightness: 20%);
+        }
+      }
+    }
+  }
+}

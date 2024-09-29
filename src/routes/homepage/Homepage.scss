@@ -1,0 +1,653 @@
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.whatsapp-icon img {
+  width: 60px;
+  height: 60px;
+}
+.about-section {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  text-align: right;
+  direction: rtl;
+  img {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(45deg, #021c22, #2c4617);
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.title2 {
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.content {
+  z-index: 1;
+  color: white;
+  max-width: 700px;
+  margin-left: 30rem;
+  .download-btn {
+    margin: 10px;
+    padding: 8px 40px;
+    background: linear-gradient(180deg, #11a58d 0%, #046e5d 100%);
+
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'noto kufi arabic', sans-serif;
+    &:hover {
+      background: #046e5d;
+    }
+  }
+}
+
+.profile {
+  margin-bottom: 30px;
+}
+
+.company-image {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.values,
+.mission,
+.principles {
+  margin-bottom: 20px;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  p,
+  ul {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+//////////////////////////////
+.contact-service {
+  height: 100vh;
+}
+
+.stats-section {
+  position: relative;
+  padding: 50px;
+
+  text-align: right;
+  height: 100vh;
+
+  .world-map {
+    position: absolute;
+
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+    text-align: left;
+    background-size: cover;
+    background-position: left;
+
+    img {
+      width: 60%;
+    }
+  }
+  .stats-content {
+    width: 40%;
+    float: right;
+    margin-right: 8rem;
+    font-family: 'noto kufi arabic', sans-serif;
+    h2 {
+      font-size: 35px;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-family: 'noto kufi arabic', sans-serif;
+      span {
+        color: #046e5d;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      color: #7f8c8d;
+      width: 80%;
+      float: right;
+      font-family: 'noto kufi arabic', sans-serif;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr; // Create two equal columns
+      grid-gap: 10px; // Add some space between the items
+      margin-top: 20px;
+      width: 55%;
+      float: right;
+      .stat {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px; // Optional: Add some padding inside each box
+        font-family: 'noto kufi arabic', sans-serif;
+
+        h3 {
+          font-size: 40px;
+          color: #2e4d48;
+          margin: 0;
+        }
+
+        p {
+          font-size: 30px;
+
+          color: #34495e;
+          font-weight: 400;
+          width: 140%;
+          margin-right: 15px;
+          text-align: left;
+          @media screen and (max-width: $breakpoint-medium) {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.customer-section {
+  height: 80vh;
+  position: relative;
+  .customer {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    width: 15%;
+  }
+  .sec-head {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    img {
+      position: absolute;
+      left: 3rem;
+    }
+    .title3 {
+      color: #046e5d;
+      font-size: 28px;
+    }
+  }
+}
+/* Overall section style */
+/* Overall section style */
+.contact-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/bbb.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-section .container {
+  display: flex;
+  background-color: #00796b;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 1100px; /* Adjusted width for a tight layout */
+  align-items: center;
+}
+
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.logo {
+  width: 240px;
+  height: auto;
+}
+
+.contact-form {
+  flex: 2;
+  text-align: right;
+}
+
+.contact-form h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-form p {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* Inputs layout */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: end;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Half-width inputs */
+.half-input {
+  width: calc(100% - 0.5rem); /* Half-width of the container with small gap */
+}
+
+.full-input {
+  margin-left: -310px;
+  width: 150%;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+  float: right;
+}
+
+.contact-form button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #00695c;
+}
+
+// Newsletter.scss
+
+.newsletter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/bbb.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  height: 60vh;
+}
+
+.newsletter-container {
+  background-image: url('/news.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 950px;
+
+  padding: 50px 37px 50px 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.text-content {
+  color: white;
+  margin-bottom: 20px;
+  text-align: right;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  .email-input {
+    flex-grow: 2;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 120px;
+  }
+
+  .subscribe-btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+
+    &:hover {
+      background-color: #00695c;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletter-container {
+    padding: 15px 30px;
+  }
+
+  .text-content h2 {
+    font-size: 20px;
+  }
+  .text-content p {
+    margin-bottom: 60px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+
+    m .email-input {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 50px;
+    }
+
+    .subscribe-btn {
+      width: 35%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// About Section
+.about-section {
+  @media (max-width: $breakpoint-medium) {
+    height: auto;
+    padding: 30px;
+  }
+
+  .content {
+    @media (max-width: $breakpoint-large) {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+
+  .title2 {
+    @media (max-width: $breakpoint-medium) {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Stats Section
+.stats-section {
+  @media (max-width: $breakpoint-large) {
+    height: 180vh;
+    padding: 30px;
+  }
+
+  .world-map {
+    @media (max-width: $breakpoint-medium) {
+      display: none;
+    }
+  }
+
+  .stats-content {
+    @media (max-width: $breakpoint-large) {
+      width: 100%;
+      margin-right: 0;
+      float: none;
+    }
+
+    .stats {
+      @media (max-width: $breakpoint-medium) {
+        width: 100%;
+        grid-template-columns: 1fr;
+        p {
+          font-size: 26px;
+          color: #34495e;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Customer Section
+.customer-section {
+  @media (max-width: $breakpoint-medium) {
+    height: 100vh;
+    padding: 30px 0;
+  }
+
+  .sec-head {
+    @media (max-width: $breakpoint-small) {
+      flex-direction: column;
+
+      img {
+        position: static;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// Contact Section
+.contact-section {
+  @media (max-width: $breakpoint-large) {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .container {
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+      width: 90%;
+    }
+  }
+
+  .logo-container {
+    @media (max-width: $breakpoint-medium) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .contact-form {
+    @media (max-width: $breakpoint-medium) {
+      width: 100%;
+    }
+
+    .full-input {
+      @media (max-width: $breakpoint-medium) {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Newsletter Section
+.newsletter-section {
+  @media (max-width: $breakpoint-medium) {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .newsletter-container {
+    @media (max-width: $breakpoint-small) {
+      padding: 15px;
+    }
+  }
+}
+
+// Swiper components
+.exact-arabic-projects-carousel {
+  @media (max-width: $breakpoint-large) {
+    height: auto;
+  }
+
+  .main-content {
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+
+  .carousel-container {
+    @media (max-width: $breakpoint-medium) {
+      width: 100%;
+      padding: 0 20px 30px;
+    }
+  }
+
+  .side-content {
+    @media (max-width: $breakpoint-medium) {
+      width: 100%;
+      padding: 30px;
+    }
+  }
+}
+
+.arabic-carousel {
+  @media (max-width: $breakpoint-large) {
+    height: auto;
+    background: linear-gradient(to bottom, #006655 70%, #e6e2d3 30%);
+  }
+
+  .carousel-content {
+    @media (max-width: $breakpoint-medium) {
+      padding: 1rem;
+    }
+  }
+
+  .text-content {
+    @media (max-width: $breakpoint-medium) {
+      text-align: center;
+    }
+  }
+
+  .swiper-container {
+    @media (max-width: $breakpoint-small) {
+      .swiper-slide {
+        width: 100% !important;
+      }
+    }
+  }
+}

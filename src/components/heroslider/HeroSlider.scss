@@ -1,0 +1,219 @@
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+.swiper-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+
+  .swiper-wrapper {
+    margin-top: 0px !important;
+  }
+}
+.swiper-button-container3 {
+  right: 125px;
+  z-index: 10000;
+  position: absolute;
+  width: 110px;
+  bottom: 125px;
+  @media screen and (max-width: $breakpoint-medium) {
+    right: 35%;
+    bottom: -70px;
+  }
+  .swiper-button-prev::after {
+    color: #046e5d;
+
+    font-size: 20px;
+  }
+
+  .swiper-button-next::after {
+    color: #fff;
+
+    font-size: 20px;
+  }
+}
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+}
+
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: #046e5d;
+  border-radius: 50%;
+  border: none;
+}
+
+.slide-content {
+  height: 100%;
+  width: 100%;
+  background-size: cover; // لتأكد من أن الصورة تغطي كامل المساحة
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: end;
+  color: #fff;
+  padding: 130px;
+  z-index: 2; // جعلها فوق الخلفية
+}
+
+.overlay h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  font-size: 20px;
+  max-width: 600px;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+
+  .btn1,
+  .btn2 {
+    margin: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-family: 'noto kufi arabic', sans-serif;
+  }
+
+  .btn1 {
+    background-color: transparent;
+    border: solid 1px white;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+
+  .btn2 {
+    background: linear-gradient(180deg, #11a58d 0%, #046e5d 100%);
+    border: none;
+
+    &:hover {
+      background: #046e5d;
+    }
+  }
+}
+
+.project-counter {
+  position: absolute;
+  bottom: 70px;
+  left: 70px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: -20px;
+  }
+  p {
+    font-size: 27px;
+    margin-left: -23px;
+  }
+}
+
+.social-icons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+
+  a {
+    margin: 0 8px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.swiper-container {
+  @media (max-width: $breakpoint-medium) {
+    height: 150vh;
+  }
+
+  .overlay {
+    @media (max-width: $breakpoint-medium) {
+      margin-right: 0;
+      padding: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      @media (max-width: $breakpoint-medium) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      @media (max-width: $breakpoint-medium) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .cta-buttons {
+    @media (max-width: $breakpoint-small) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn1,
+    .btn2 {
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .project-counter {
+    @media (max-width: $breakpoint-medium) {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+
+  .social-icons {
+    @media (max-width: $breakpoint-medium) {
+      margin-top: 20px;
+    }
+  }
+}
+.project-counter {
+  @media (max-width: $breakpoint-medium) {
+    display: none;
+  }
+}
+
+.success-message {
+  color: #fff;
+}
