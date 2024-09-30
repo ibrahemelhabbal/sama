@@ -263,9 +263,9 @@
     padding: 50px 155px 120px 90px !important;
     align-items: flex-start !important;
     font-family: 'noto kufi arabic', sans-serif;
-    @media (min-width: 768px) {
-      width: 30%;
-      padding: 50px;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 50px !important;
       align-items: flex-end;
       border-radius: 15px;
     }
@@ -285,7 +285,7 @@
       width: 80px;
       height: auto;
       margin-bottom: 50px;
-
+      margin-right: 40%;
       z-index: 1;
 
       @media (min-width: 768px) {

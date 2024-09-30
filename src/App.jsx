@@ -3,6 +3,7 @@ import Homepage from './routes/homepage/Homepage';
 import SerDetail from './routes/serdetail/SerDetail';
 import ProDetail from './routes/projectdetail/ProDetail';
 import './index.scss';
+
 function App() {
   return (
     <Routes>

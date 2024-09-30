@@ -1,58 +1,105 @@
-.service-header {
-  height: 70vh;
-  width: 100%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  h1 {
-    position: absolute;
-    top: 35%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 3rem;
-    text-align: center;
-  }
-}
-.service-image {
-  height: 50vh;
-  width: 95%;
-  padding: 20px;
-}
-.sec-service {
-  padding: 20px;
+.service-details {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; // بدلاً من flex-end لمحاذاة المحتوى إلى الأعلى
-  align-items: flex-end; // تغيير المحاذاة من اليمين إلى اليسار
-  text-align: right;
-  h1 {
-    margin-right: 17rem;
-    font-size: 40px;
-  }
-  p {
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-    line-height: 3;
-    margin-right: 16rem;
-    max-width: 1000px;
+  min-height: 100vh;
 
-    @media (min-width: 768px) {
-      font-size: 24px;
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .service-header {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+      padding: 0 1rem;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
     }
   }
-}
 
-.mySwiper {
-  height: 80vh;
-  width: 130vh; // يمكنك تغيير هذه القيمة لتناسب التصميم المطلوب
-}
+  .sec-service {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
 
-.swiper-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; // هذا يضمن أن الصورة تغطي المساحة بالكامل
+    .service-title {
+      text-decoration: none;
+      color: inherit;
+
+      h2 {
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+
+        @media (min-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .mySwiper {
+      width: 100%;
+      height: 50vh;
+      margin-bottom: 2rem;
+
+      @media (min-width: 768px) {
+        height: 60vh;
+      }
+
+      @media (min-width: 1024px) {
+        height: 70vh;
+      }
+
+      .swiper-image-container {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .no-images {
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+    }
+
+    .service-description {
+      margin-top: 2rem;
+      line-height: 1.6;
+      font-size: 1rem;
+
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

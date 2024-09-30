@@ -1,16 +1,17 @@
-import { useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useLocation, useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import './SerDetail.scss';
-import route1 from '/route1.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css/pagination';
+import './SerDetail.scss';
 
-function SerDetail() {
+export default function SerDetail() {
   const { id } = useParams();
   const location = useLocation();
   const [serviceData, setServiceData] = useState(location.state || null);
@@ -21,7 +22,6 @@ function SerDetail() {
         try {
           const apiUrl = `http://localhost:1337/api/first-swipers/${id}?populate=*`;
           const response = await axios.get(apiUrl);
-          console.log(response.data); // للتحقق من هيكل البيانات
           setServiceData(response.data.data);
         } catch (error) {
           console.error('Error fetching service details:', error);
@@ -32,52 +32,48 @@ function SerDetail() {
   }, [id, serviceData]);
 
   if (!serviceData) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
-  // استدعاء title وdesc وimages هنا
   const { title, desc, images } = serviceData;
 
   return (
-    <div>
-      <div className="service-details">
-        <Navbar />
-        <div className="service-header">
-          <img src={route1} alt="route1" />
-          <h1>تفاصيل الخدمه</h1>
-        </div>
-        <div className="sec-service">
-          <h1>{title}</h1>
-
-          {/* Slider section */}
-          {images && images.length > 0 ? (
-            <Swiper
-              pagination={{ clickable: true }}
-              modules={[Navigation, Pagination]}
-              className="mySwiper"
-              spaceBetween={30}
-              slidesPerView={1}
-              loop={true}>
-              {images.map((image, index) => (
-                <SwiperSlide key={index}>
+    <div className="service-details">
+      <Navbar />
+      <div className="service-header">
+        <img src="/route1.jpeg" alt="Service header background" />
+        <h1>تفاصيل الخدمه</h1>
+      </div>
+      <div className="sec-service">
+        <Link to="/" className="service-title">
+          <h2>{title}&rarr;</h2>
+        </Link>
+        {images && images.length > 0 ? (
+          <Swiper
+            pagination={{ clickable: true }}
+            navigation
+            modules={[Navigation, Pagination]}
+            className="mySwiper"
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}>
+            {images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <div className="swiper-image-container">
                   <img
-                    className="swiper-image"
                     src={`http://localhost:1337${image.url}`}
-                    alt={`Slide ${index}`}
+                    alt={`Service image ${index + 1}`}
                   />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          ) : (
-            <p>No images available</p>
-          )}
-
-          <p>{desc}</p>
-        </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <p className="no-images">No images available</p>
+        )}
+        <p className="service-description">{desc}</p>
       </div>
       <Footer />
     </div>
   );
 }
-
-export default SerDetail;

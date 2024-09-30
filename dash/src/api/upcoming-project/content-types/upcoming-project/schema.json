@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "upcoming_projects",
+  "info": {
+    "singularName": "upcoming-project",
+    "pluralName": "upcoming-projects",
+    "displayName": "المشاريع الغير مكتمله",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "swr_alemlaes",
+  "info": {
+    "singularName": "swr-alemlae",
+    "pluralName": "swr-alemlaes",
+    "displayName": "صور العملاء"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

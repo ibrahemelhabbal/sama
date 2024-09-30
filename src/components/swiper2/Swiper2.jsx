@@ -26,12 +26,12 @@ function ExactArabicProjectsCarousel() {
     const fetchProjects = async () => {
       try {
         const upcomingResponse = await axios.get(
-          'http://localhost:1337/api/upcoming-projects?populate=*',
+          'https://efficient-baseball-fa5bd22b3c.strapiapp.com/api/upcoming-projects?populate=*',
         );
         setUpcomingProjects(upcomingResponse.data.data);
 
         const completedResponse = await axios.get(
-          'http://localhost:1337/api/completed-projects?populate=*',
+          'https://efficient-baseball-fa5bd22b3c.strapiapp.com/api/completed-projects?populate=*',
         );
         setCompletedProjects(completedResponse.data.data);
       } catch (error) {
@@ -98,7 +98,7 @@ function ExactArabicProjectsCarousel() {
                   <div className="image-container">
                     {item.images && item.images.length > 0 && (
                       <img
-                        src={`http://localhost:1337${item.images[0].url}`} // تأكد من استدعاء الصورة الأولى فقط
+                        src={`https://efficient-baseball-fa5bd22b3c.strapiapp.com${item.images[0].url}`} // تأكد من استدعاء الصورة الأولى فقط
                         alt={item.title}
                       />
                     )}

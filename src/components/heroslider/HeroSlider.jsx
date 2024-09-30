@@ -54,7 +54,7 @@ const HeroSlider = () => {
     const fetchSlides = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:1337/api/herosections?populate=*',
+          'https://efficient-baseball-fa5bd22b3c.strapiapp.com/api/herosections?populate=*',
         );
         setSlides(response.data.data);
       } catch (error) {

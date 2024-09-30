@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "herosections",
+  "info": {
+    "singularName": "herosection1",
+    "pluralName": "herosections",
+    "displayName": "السكشن الاول",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}

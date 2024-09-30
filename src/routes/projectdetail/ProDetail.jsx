@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
-
+import { Link } from 'react-router-dom';
 function ProDetail() {
   const { id } = useParams();
   const location = useLocation();
@@ -50,7 +50,9 @@ function ProDetail() {
           <h1>تفاصيل المشروع</h1>
         </div>
         <div className="sec-service">
-          <h1>{title}</h1>
+          <Link to="/">
+            <h1>{title}&rarr;</h1>
+          </Link>
 
           {/* Slider section */}
           {images && images.length > 0 ? (
