@@ -57,7 +57,7 @@ const Homepage = () => {
     const fetchCustomerLogos = async () => {
       try {
         const response = await axios.get(
-          `https://efficient-baseball-fa5bd22b3c.strapiapp.com/api/swr-alemlaes?populate=*`,
+          `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/swr-alemlaes?populate=*`,
         );
 
         setCustomerLogos(response.data.data);
@@ -91,7 +91,7 @@ const Homepage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://efficient-baseball-fa5bd22b3c.strapiapp.com/api/alskshn-althanies/?populate=*`,
+          `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/alskshn-althanies/?populate=*`,
         ); // تأكد من إضافة المعرف هنا
         const result = await response.json();
         setData(result.data); // تأكد من أن هذا يتوافق مع هيكل البيانات الذي يعود به Strapi
@@ -198,7 +198,7 @@ const Homepage = () => {
             <SwiperSlide key={logo.id}>
               <img
                 // Construct the full URL for the image
-                src={`https://efficient-baseball-fa5bd22b3c.strapiapp.com${logo.image.url}`}
+                src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com${logo.image.url}`}
                 alt={logo.alt_text || 'Customer Logo'}
                 style={{ maxWidth: '150px' }}
               />

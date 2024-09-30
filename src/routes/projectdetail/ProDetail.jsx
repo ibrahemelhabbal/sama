@@ -22,8 +22,8 @@ function ProDetail() {
       const fetchProject = async () => {
         try {
           const apiEndpoint = location.state?.isCompleted
-            ? `http://localhost:1337/api/completed-projects/${id}?populate=*`
-            : `http://localhost:1337/api/upcoming-projects/${id}?populate=*`;
+            ? `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/completed-projects/${id}?populate=*`
+            : `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/upcoming-projects/${id}?populate=*`;
 
           const response = await axios.get(apiEndpoint);
           setProjectData(response.data.data);
@@ -67,7 +67,7 @@ function ProDetail() {
                 <SwiperSlide key={index}>
                   <img
                     className="swiper-image"
-                    src={`http://localhost:1337${image.url}`}
+                    src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com${image.url}`}
                     alt={`Slide ${index}`}
                   />
                 </SwiperSlide>
