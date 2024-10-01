@@ -98,7 +98,7 @@ function ExactArabicProjectsCarousel() {
                   <div className="image-container">
                     {item.images && item.images.length > 0 && (
                       <img
-                        src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${item.images[0].url}`} // تأكد من استدعاء الصورة الأولى فقط
+                        src={`${item.images[0].url}`} // تأكد من استدعاء الصورة الأولى فقط
                         alt={item.title}
                       />
                     )}

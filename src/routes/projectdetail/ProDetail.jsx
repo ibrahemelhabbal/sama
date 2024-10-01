@@ -67,7 +67,7 @@ function ProDetail() {
                 <SwiperSlide key={index}>
                   <img
                     className="swiper-image"
-                    src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${image.url}`}
+                    src={`${image.url}`}
                     alt={`Slide ${index}`}
                   />
                 </SwiperSlide>

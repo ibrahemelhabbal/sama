@@ -77,10 +77,7 @@ function ArabicCarousel() {
                   style={{ cursor: 'pointer' }}>
                   <div className="image-container">
                     {imageUrl ? (
-                      <img
-                        src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${imageUrl}`}
-                        alt={title}
-                      />
+                      <img src={`${imageUrl}`} alt={title} />
                     ) : (
                       <p>لا توجد صورة متاحة</p>
                     )}

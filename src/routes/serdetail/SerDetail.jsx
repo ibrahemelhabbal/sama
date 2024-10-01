@@ -61,7 +61,7 @@ export default function SerDetail() {
               <SwiperSlide key={index}>
                 <div className="swiper-image-container">
                   <img
-                    src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${image.url}`}
+                    src={`${image.url}`}
                     alt={`Service image ${index + 1}`}
                   />
                 </div>

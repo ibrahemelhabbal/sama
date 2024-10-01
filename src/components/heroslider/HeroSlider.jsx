@@ -95,7 +95,7 @@ const HeroSlider = () => {
             <div
               className="slide-content"
               style={{
-                backgroundImage: `url(hhttps://phenomenal-apparel-b276e02b81.strapiapp.com/${slide.image.url})`,
+                backgroundImage: `url(${slide.image.url})`,
               }}>
               <div className="project-counter">
                 <div className="counter">
