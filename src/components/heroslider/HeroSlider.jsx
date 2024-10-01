@@ -54,7 +54,7 @@ const HeroSlider = () => {
     const fetchSlides = async () => {
       try {
         const response = await axios.get(
-          'https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/herosections?populate=*',
+          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/herosections?populate=*',
         );
         setSlides(response.data.data);
       } catch (error) {
@@ -95,7 +95,7 @@ const HeroSlider = () => {
             <div
               className="slide-content"
               style={{
-                backgroundImage: `url(http://localhost:1337${slide.image.url})`,
+                backgroundImage: `url(hhttps://phenomenal-apparel-b276e02b81.strapiapp.com/${slide.image.url})`,
               }}>
               <div className="project-counter">
                 <div className="counter">

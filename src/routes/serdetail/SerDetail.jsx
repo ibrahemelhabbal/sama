@@ -20,7 +20,7 @@ export default function SerDetail() {
     if (!serviceData) {
       const fetchData = async () => {
         try {
-          const apiUrl = `https://inspiring-eggs-3c9510aeb2.strapiapp.com/${id}?populate=*`;
+          const apiUrl = `https://phenomenal-apparel-b276e02b81.strapiapp.com/${id}?populate=*`;
           const response = await axios.get(apiUrl);
           setServiceData(response.data.data);
         } catch (error) {
@@ -61,7 +61,7 @@ export default function SerDetail() {
               <SwiperSlide key={index}>
                 <div className="swiper-image-container">
                   <img
-                    src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com${image.url}`}
+                    src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${image.url}`}
                     alt={`Service image ${index + 1}`}
                   />
                 </div>

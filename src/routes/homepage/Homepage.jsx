@@ -57,7 +57,7 @@ const Homepage = () => {
     const fetchCustomerLogos = async () => {
       try {
         const response = await axios.get(
-          `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/swr-alemlaes?populate=*`,
+          `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/swr-alemlaes?populate=*`,
         );
 
         setCustomerLogos(response.data.data);

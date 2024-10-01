@@ -17,7 +17,7 @@ function ArabicCarousel() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/first-swipers?populate=*',
+          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/first-swipers?populate=*',
         );
         setCarouselItems(response.data.data); // Assuming data is in the format { data: [...] }
       } catch (error) {
@@ -78,7 +78,7 @@ function ArabicCarousel() {
                   <div className="image-container">
                     {imageUrl ? (
                       <img
-                        src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com${imageUrl}`}
+                        src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${imageUrl}`}
                         alt={title}
                       />
                     ) : (

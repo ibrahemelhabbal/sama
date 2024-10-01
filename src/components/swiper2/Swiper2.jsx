@@ -26,12 +26,12 @@ function ExactArabicProjectsCarousel() {
     const fetchProjects = async () => {
       try {
         const upcomingResponse = await axios.get(
-          'https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/upcoming-projects?populate=*',
+          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/upcoming-projects?populate=*',
         );
         setUpcomingProjects(upcomingResponse.data.data);
 
         const completedResponse = await axios.get(
-          'https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/completed-projects?populate=*',
+          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/completed-projects?populate=*',
         );
         setCompletedProjects(completedResponse.data.data);
       } catch (error) {
@@ -98,7 +98,7 @@ function ExactArabicProjectsCarousel() {
                   <div className="image-container">
                     {item.images && item.images.length > 0 && (
                       <img
-                        src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com/${item.images[0].url}`} // تأكد من استدعاء الصورة الأولى فقط
+                        src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${item.images[0].url}`} // تأكد من استدعاء الصورة الأولى فقط
                         alt={item.title}
                       />
                     )}

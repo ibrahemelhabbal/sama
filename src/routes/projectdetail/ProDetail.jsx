@@ -22,8 +22,8 @@ function ProDetail() {
       const fetchProject = async () => {
         try {
           const apiEndpoint = location.state?.isCompleted
-            ? `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/completed-projects/${id}?populate=*`
-            : `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/upcoming-projects/${id}?populate=*`;
+            ? `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/completed-projects/${id}?populate=*`
+            : `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/upcoming-projects/${id}?populate=*`;
 
           const response = await axios.get(apiEndpoint);
           setProjectData(response.data.data);
@@ -67,7 +67,7 @@ function ProDetail() {
                 <SwiperSlide key={index}>
                   <img
                     className="swiper-image"
-                    src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com${image.url}`}
+                    src={`https://phenomenal-apparel-b276e02b81.strapiapp.com/${image.url}`}
                     alt={`Slide ${index}`}
                   />
                 </SwiperSlide>
