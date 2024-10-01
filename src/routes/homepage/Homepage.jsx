@@ -198,7 +198,7 @@ const Homepage = () => {
             <SwiperSlide key={logo.id}>
               <img
                 // Construct the full URL for the image
-                src={`https://inspiring-eggs-3c9510aeb2.strapiapp.com${logo.image.url}`}
+                src={`${logo.image.url}`}
                 alt={logo.alt_text || 'Customer Logo'}
                 style={{ maxWidth: '150px' }}
               />
