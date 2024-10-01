@@ -91,7 +91,7 @@ const Homepage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://inspiring-eggs-3c9510aeb2.strapiapp.com/api/alskshn-althanies/?populate=*`,
+          `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/alskshn-althanies/?populate=*`,
         ); // تأكد من إضافة المعرف هنا
         const result = await response.json();
         setData(result.data); // تأكد من أن هذا يتوافق مع هيكل البيانات الذي يعود به Strapi
