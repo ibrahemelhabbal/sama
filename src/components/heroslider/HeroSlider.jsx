@@ -9,9 +9,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './HeroSlider.scss';
 
-import link1 from '/link1.png';
 import link2 from '/link2.png';
-import link3 from '/link3.png';
+
 import link4 from '/link4.png';
 
 const StatItem = ({ number, label }) => {
@@ -107,7 +106,7 @@ const HeroSlider = () => {
                 <p>{slide.desc || 'وصف غير متوفر.'}</p>
                 <div className="cta-buttons">
                   <ScrollLink
-                    to="services"
+                    to="contact"
                     spy={true}
                     smooth={true}
                     offset={-70}
@@ -126,16 +125,13 @@ const HeroSlider = () => {
                   </ScrollLink>
                 </div>
                 <div className="social-icons">
-                  <a href="#" aria-label="Instagram">
-                    <img src={link1} alt="Instagram" />
-                  </a>
-                  <a href="#" aria-label="Snapchat">
+                  <a
+                    href="https://www.instagram.com/smaeast/"
+                    aria-label="Snapchat">
                     <img src={link2} alt="Snapchat" />
                   </a>
-                  <a href="#" aria-label="Twitter">
-                    <img src={link3} alt="Twitter" />
-                  </a>
-                  <a href="#" aria-label="WhatsApp">
+
+                  <a href="https://x.com/SmaEast" aria-label="WhatsApp">
                     <img src={link4} alt="WhatsApp" />
                   </a>
                 </div>

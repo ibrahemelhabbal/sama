@@ -51,11 +51,13 @@ const Footer = () => {
           </p>
           <h3>: تابعنا على</h3>
           <div className="social-icons">
-            <a href="#" className="social-icon">
+            <a
+              href="https://www.instagram.com/smaeast/"
+              className="social-icon">
               <Instagram size={24} />
             </a>
 
-            <a href="#" className="social-icon">
+            <a href="https://x.com/SmaEast" className="social-icon">
               <Twitter size={24} />
             </a>
           </div>

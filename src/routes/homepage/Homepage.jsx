@@ -21,17 +21,24 @@ import iiii from '/iiii.png';
 import building from '/building.png';
 import axios from 'axios';
 // Import Swiper styles
+import { useInView } from 'react-intersection-observer';
 
 const Homepage = () => {
   const StatItem = ({ number, label }) => {
     const [count, setCount] = useState(0);
+    const { ref, inView } = useInView({
+      triggerOnce: true, // العداد يعمل مرة واحدة
+      threshold: 0.5, // يبدأ العداد عندما يظهر 50% من العنصر
+    });
 
     useEffect(() => {
+      if (!inView) return;
+
       let start = 0;
       const end = parseInt(number);
       if (start === end) return;
 
-      let incrementTime = Math.floor(2000 / end); // Time for each increment
+      let incrementTime = Math.floor(2000 / end);
 
       const timer = setInterval(() => {
         start += 1;
@@ -40,10 +47,10 @@ const Homepage = () => {
       }, incrementTime);
 
       return () => clearInterval(timer);
-    }, [number]);
+    }, [inView, number]);
 
     return (
-      <div className="stat">
+      <div className="stat" ref={ref}>
         <h3>{count}+</h3>
         <p>{label}</p>
       </div>
@@ -108,7 +115,12 @@ const Homepage = () => {
       <Navbar />
       <HeroSlider />
       <div className="whatsapp-icon">
-        <img src={whatsappIcon} alt="WhatsApp" />
+        <a
+          href="https://wa.me/+966534811111"
+          target="_blank"
+          rel="noopener noreferrer">
+          <img src={whatsappIcon} alt="WhatsApp" />
+        </a>
       </div>
       <section className="about-section" id="about">
         <img src={building} alt="Building" />
