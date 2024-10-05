@@ -35,7 +35,7 @@ function ArabicCarousel() {
   return (
     <div className="arabic-carousel">
       <div className="carousel-content">
-        <div className="text-content">
+        <div className="text-contentt">
           <h2>خدماتنا</h2>
           <p>
             نلتزم في سما الشرقية بالجودة الشاملة والابتكار مع تعزيز التعاون

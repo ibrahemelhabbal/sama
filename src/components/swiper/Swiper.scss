@@ -18,7 +18,7 @@
     }
   }
 
-  .text-content {
+  .text-contentt {
     color: #000000;
     margin-bottom: 2rem;
     text-align: right !important;
@@ -32,11 +32,12 @@
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: #181818;
+      color: #e6e2d3;
 
       @media (min-width: 768px) {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
+        color: #e6e2d3;
       }
     }
 
@@ -47,6 +48,7 @@
 
       @media (min-width: 768px) {
         font-size: 1.8rem;
+        color: #e6e2d3 !important;
       }
     }
   }
