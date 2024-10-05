@@ -124,7 +124,6 @@ const Homepage = () => {
       </div>
       <section className="about-section" id="about">
         <img src={building} alt="Building" />
-        <div className="animated-bg"></div>
 
         <h1 className="title2">سما الشرقية</h1>
 

@@ -1,11 +1,11 @@
 .arabic-carousel {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #006655 60%, #e6e2d3 40%);
+  background: linear-gradient(to bottom, #2e4d48 60%, #e6e2d3 40%);
   direction: rtl;
 
   @media (min-width: 768px) {
-    background: linear-gradient(to right, #006655 60%, #e6e2d3 40%);
+    background: linear-gradient(to right, #2e4d48 60%, #e6e2d3 40%);
   }
 
   .carousel-content {
