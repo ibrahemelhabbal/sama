@@ -18,7 +18,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Footer from '../../components/footer/Footer';
 import iiii from '/iiii.png';
-import building from '/building.png';
+
 import axios from 'axios';
 // Import Swiper styles
 import { useInView } from 'react-intersection-observer';
@@ -109,6 +109,16 @@ const Homepage = () => {
 
     fetchData();
   }, []);
+  useEffect(() => {
+    fetch('https://your-strapi-url/api/your-endpoint')
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   return (
     <div>
@@ -123,24 +133,31 @@ const Homepage = () => {
         </a>
       </div>
       <section className="about-section" id="about">
-        <img src={building} alt="Building" />
-
-        <h1 className="title2">سما الشرقية</h1>
-
         <div className="content">
           {/* التأكد من وجود البيانات والتحقق من أنها مصفوفة */}
           {data && Array.isArray(data) && data.length > 0 ? (
-            data.map((item, index) => (
-              <div key={index} className="values">
-                <h2>{item.title1}</h2>
-                <p>{item.text1}</p>
-              </div>
-            ))
+            <div className="cards-container">
+              {data.map((item, index) => (
+                <div key={index} className="card">
+                  <div className="card-image-container">
+                    <img
+                      src={item.imageUrl} // ربط الصورة من Strapi
+                      alt={item.title1}
+                      className="card-image"
+                    />
+                  </div>
+                  <div className="card-content">
+                    <h2>{item.title1}</h2> {/* ربط العنوان من Strapi */}
+                    <p>{item.text1}</p> {/* ربط النص من Strapi */}
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <p>جارٍ تحميل البيانات...</p> // رسالة عند عدم وجود بيانات
           )}
 
-          {/* زر "الملف التعريفي" داخل content لكن بدون تكرار */}
+          {/* زر "الملف التعريفي" */}
           <button className="download-btn">الملف التعريفي</button>
         </div>
       </section>
