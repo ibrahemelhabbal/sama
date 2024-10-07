@@ -64,9 +64,25 @@ const HeroSlider = () => {
     fetchSlides();
   }, []);
 
+  const [data, setData] = useState({});
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        const response = await fetch(
+          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/albyanats/?populate=*',
+        );
+        const responseData = await response.json();
+        setData(responseData.data[0]); // استخدم "attributes" إذا كانت البيانات تحتوي عليها
+      } catch (error) {
+        console.error('Error fetching contact info:', error);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
+
   useEffect(() => {
     if (swiperRef.current) {
-      // تحديث عناصر التنقل والصفحات بعد تحميل الشرائح
       swiperRef.current.navigation.init();
       swiperRef.current.navigation.update();
       swiperRef.current.pagination.render();
@@ -126,12 +142,16 @@ const HeroSlider = () => {
                 </div>
                 <div className="social-icons">
                   <a
-                    href="https://www.instagram.com/smaeast/"
+                    href={
+                      data.instagram || 'https://www.instagram.com/smaeast/'
+                    }
                     aria-label="Snapchat">
                     <img src={link2} alt="Snapchat" />
                   </a>
 
-                  <a href="https://x.com/SmaEast" aria-label="WhatsApp">
+                  <a
+                    href={data.twitter || 'https://x.com/SmaEast'}
+                    aria-label="WhatsApp">
                     <img src={link4} alt="WhatsApp" />
                   </a>
                 </div>

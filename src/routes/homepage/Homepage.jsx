@@ -5,7 +5,7 @@ import HeroSlider from '../../components/heroslider/HeroSlider';
 import ArabicCarousel from '../../components/swiper/Swiper';
 import ExactArabicProjectsCarousel from '../../components/swiper2/Swiper2';
 import PropTypes from 'prop-types';
-import earth from '/earth.png';
+
 import darklogo from '/darklogo.png';
 import whitelogo from '/whitelogo.png';
 
@@ -92,8 +92,6 @@ const Homepage = () => {
     setIsSubmittedd(true); // تحديث الحالة لتظهر رسالة النجاح
   };
 
-  const [data, setData] = useState(null);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -101,7 +99,8 @@ const Homepage = () => {
           `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/alskshn-althanies/?populate=*`,
         ); // تأكد من إضافة المعرف هنا
         const result = await response.json();
-        setData(result.data); // تأكد من أن هذا يتوافق مع هيكل البيانات الذي يعود به Strapi
+        console.log(result.data);
+        setCardsData(result.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -109,15 +108,23 @@ const Homepage = () => {
 
     fetchData();
   }, []);
+  const [cardsData, setCardsData] = useState(null);
+  const [downloadData, setDownloadData] = useState(null);
   useEffect(() => {
-    fetch('https://your-strapi-url/api/your-endpoint')
-      .then(response => response.json())
-      .then(data => {
-        setData(data);
-      })
-      .catch(error => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/almlf-alteryfies/?populate=*`,
+        ); // تأكد من إضافة المعرف هنا
+        const result = await response.json();
+
+        setDownloadData(result.data);
+      } catch (error) {
         console.error('Error fetching data:', error);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -132,33 +139,47 @@ const Homepage = () => {
           <img src={whatsappIcon} alt="WhatsApp" />
         </a>
       </div>
+
       <section className="about-section" id="about">
         <div className="content">
-          {/* التأكد من وجود البيانات والتحقق من أنها مصفوفة */}
-          {data && Array.isArray(data) && data.length > 0 ? (
+          {/* عرض الكروت */}
+          {cardsData && Array.isArray(cardsData) && cardsData.length > 0 ? (
             <div className="cards-container">
-              {data.map((item, index) => (
+              {cardsData.map((item, index) => (
                 <div key={index} className="card">
                   <div className="card-image-container">
-                    <img
-                      src={item.imageUrl} // ربط الصورة من Strapi
-                      alt={item.title1}
-                      className="card-image"
-                    />
-                  </div>
-                  <div className="card-content">
-                    <h2>{item.title1}</h2> {/* ربط العنوان من Strapi */}
-                    <p>{item.text1}</p> {/* ربط النص من Strapi */}
+                    {item.image && item.image[0]?.url && (
+                      <img
+                        src={item.image[0].url}
+                        className="card-image"
+                        alt={item.title1}
+                      />
+                    )}
+                    <div className="card-content">
+                      <h2>{item.title1}</h2>
+                      <p>{item.text1}</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <p>جارٍ تحميل البيانات...</p> // رسالة عند عدم وجود بيانات
+            <p>جارٍ تحميل البيانات...</p>
           )}
 
-          {/* زر "الملف التعريفي" */}
-          <button className="download-btn">الملف التعريفي</button>
+          {/* زر التحميل */}
+          {downloadData &&
+            downloadData.length > 0 &&
+            downloadData[0]?.file?.length > 0 && (
+              <div className="download-container">
+                <a
+                  href={downloadData[0].file[0].url}
+                  className="download-btn"
+                  download>
+                  الملف التعريفي
+                </a>
+              </div>
+            )}
         </div>
       </section>
 
@@ -169,9 +190,6 @@ const Homepage = () => {
         <ExactArabicProjectsCarousel />
       </section>
       <section className="stats-section">
-        <div className="world-map">
-          <img src={earth} alt="Earth Map" />
-        </div>
         <div className="stats-content">
           <h2>
             سما الشرقية في <span>الأرقام</span>
@@ -321,7 +339,7 @@ const Homepage = () => {
 Homepage.propTypes = {
   number: PropTypes.string,
   label: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
 
 export default Homepage;

@@ -39,7 +39,7 @@ function ProDetail() {
     return <p>Loading...</p>;
   }
 
-  const { title, desc, images } = projectData;
+  const { title, desc, images, file } = projectData;
 
   return (
     <div>
@@ -78,6 +78,12 @@ function ProDetail() {
           )}
 
           <p>{desc}</p>
+
+          {/* Button section */}
+
+          <a href={file} download>
+            <button className="download-btn">تنزيل الملف</button>
+          </a>
         </div>
       </div>
       <Footer />

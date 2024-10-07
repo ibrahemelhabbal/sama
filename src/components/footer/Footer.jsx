@@ -1,8 +1,31 @@
 import { MapPin, Phone, Mail, Instagram, Twitter } from 'lucide-react';
 import './Footer.scss';
 import whitelogo from '/whitelogo.png';
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        const response = await fetch(
+          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/albyanats/?populate=*',
+        );
+        const responseData = await response.json();
+        setData(responseData.data[0]); // استخدم "attributes" إذا كانت البيانات تحتوي عليها
+      } catch (error) {
+        console.error('Error fetching contact info:', error);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
+
+  if (!data) {
+    return <p>جارٍ تحميل البيانات...</p>; // نص تحميل
+  }
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -12,15 +35,15 @@ const Footer = () => {
           <div className="footer-contact">
             <ul>
               <li>
-                <span>966 55 244 8079+</span>
+                <span>{data.number || 'رقم الهاتف غير متوفر'}</span>
                 <Phone size={40} />
               </li>
               <li>
-                <span>Saudi Arabia Kingdom , Dammam - Ettamar</span>
+                <span>{data.address || 'العنوان غير متوفر'}</span>
                 <MapPin size={40} />
               </li>
               <li>
-                <span>Abdelrahmanaltahr39@gmail.com</span>
+                <span>{data.email || 'البريد الإلكتروني غير متوفر'}</span>
                 <Mail size={40} />
               </li>
             </ul>
@@ -52,12 +75,14 @@ const Footer = () => {
           <h3>: تابعنا على</h3>
           <div className="social-icons">
             <a
-              href="https://www.instagram.com/smaeast/"
+              href={data.instagram || 'https://www.instagram.com/smaeast/'}
               className="social-icon">
               <Instagram size={24} />
             </a>
 
-            <a href="https://x.com/SmaEast" className="social-icon">
+            <a
+              href={data.twitter || 'https://x.com/SmaEast'}
+              className="social-icon">
               <Twitter size={24} />
             </a>
           </div>
