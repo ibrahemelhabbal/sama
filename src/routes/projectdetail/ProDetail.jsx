@@ -4,12 +4,12 @@ import './ProDetail.scss';
 import route2 from '/route2.jpeg';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+
 function ProDetail() {
   const { id } = useParams();
   const location = useLocation();
@@ -40,6 +40,9 @@ function ProDetail() {
   }
 
   const { title, desc, images, file } = projectData;
+
+  // تأكد من وجود مسار الملف
+  const fileUrl = Array.isArray(file) && file.length > 0 ? file[0].url : null;
 
   return (
     <div>
@@ -77,13 +80,18 @@ function ProDetail() {
             <p>No images available</p>
           )}
 
-          <p>{desc}</p>
+          <p>{desc || 'لا يوجد وصف متاح'}</p>
 
           {/* Button section */}
-
-          <a href={file} download>
-            <button className="download-btn">تنزيل الملف</button>
-          </a>
+          {fileUrl ? (
+            <div className="download-container">
+              <a href={fileUrl} className="download-btn" download>
+                تنزيل الملف
+              </a>
+            </div>
+          ) : (
+            <p>No file available for download.</p>
+          )}
         </div>
       </div>
       <Footer />

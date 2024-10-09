@@ -171,8 +171,8 @@ $breakpoint-xlarge: 1200px;
   }
   .stats-content {
     width: 40%;
-    float: right;
-    margin-right: 8rem;
+    margin: 0 auto;
+
     font-family: 'noto kufi arabic', sans-serif;
     h2 {
       font-size: 35px;
@@ -245,6 +245,7 @@ $breakpoint-xlarge: 1200px;
     justify-content: center;
     align-items: center;
     display: flex;
+    margin-top: 35px;
     position: relative;
     img {
       position: absolute;
@@ -509,7 +510,7 @@ $breakpoint-xlarge: 1200px;
 // Stats Section
 .stats-section {
   @media (max-width: $breakpoint-large) {
-    height: 180vh;
+    height: 155vh;
     padding: 30px;
   }
 
@@ -544,7 +545,7 @@ $breakpoint-xlarge: 1200px;
 // Customer Section
 .customer-section {
   @media (max-width: $breakpoint-medium) {
-    height: 100vh;
+    height: 60vh;
     padding: 30px 0;
   }
 

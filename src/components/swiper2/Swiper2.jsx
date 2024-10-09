@@ -48,14 +48,14 @@ function ExactArabicProjectsCarousel() {
       <div className="carousel-header">
         <div className="tab-switch">
           <button
-            className={activeTab === 'upcoming' ? 'active' : ''}
-            onClick={() => setActiveTab('upcoming')}>
-            مشاريعنا القادمة
-          </button>
-          <button
             className={activeTab === 'completed' ? 'active' : ''}
             onClick={() => setActiveTab('completed')}>
             مشاريعنا المكتملة
+          </button>
+          <button
+            className={activeTab === 'upcoming' ? 'active' : ''}
+            onClick={() => setActiveTab('upcoming')}>
+            مشاريعنا القادمة
           </button>
         </div>
       </div>

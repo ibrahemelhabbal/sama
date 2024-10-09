@@ -10,7 +10,6 @@ import 'swiper/css/pagination';
 import './HeroSlider.scss';
 
 import link2 from '/link2.png';
-
 import link4 from '/link4.png';
 
 const StatItem = ({ number, label }) => {
@@ -107,11 +106,30 @@ const HeroSlider = () => {
         className="swiper-container">
         {slides.map(slide => (
           <SwiperSlide key={slide.id}>
-            <div
-              className="slide-content"
-              style={{
-                backgroundImage: `url(${slide.image.url})`,
-              }}>
+            <div className="slide-content">
+              {slide.image && slide.image.mime ? ( // تحقق من وجود slide.image و mime
+                slide.image.mime.includes('video') ? ( // التحقق إذا كان الملف فيديو
+                  <video controls autoPlay muted loop>
+                    <source src={slide.image.url} type={slide.image.mime} />
+                    المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                  </video>
+                ) : slide.image.mime.includes('image') ? ( // التحقق إذا كان الملف صورة
+                  <div
+                    style={{
+                      backgroundImage: `url(${slide.image.url})`, // عرض الصورة
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                    className="background-image"
+                  />
+                ) : (
+                  <div>الملف غير مدعوم</div> // إذا كان نوع الملف غير مدعوم
+                )
+              ) : (
+                <div>الصورة أو الفيديو غير متوفر</div> // نص بديل إذا لم تكن الصورة أو الفيديو متوفر
+              )}
               <div className="project-counter">
                 <div className="counter">
                   <StatItem number="150" label="مشروع" />
@@ -148,7 +166,6 @@ const HeroSlider = () => {
                     aria-label="Snapchat">
                     <img src={link2} alt="Snapchat" />
                   </a>
-
                   <a
                     href={data.twitter || 'https://x.com/SmaEast'}
                     aria-label="WhatsApp">
