@@ -52,7 +52,7 @@ const HeroSlider = () => {
     const fetchSlides = async () => {
       try {
         const response = await axios.get(
-          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/herosections?populate=*',
+          'https://credible-frogs-c0463567d4.strapiapp.com/api/herosections?populate=*',
         );
         setSlides(response.data.data);
       } catch (error) {
@@ -68,7 +68,7 @@ const HeroSlider = () => {
     const fetchContactInfo = async () => {
       try {
         const response = await fetch(
-          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/albyanats/?populate=*',
+          'https://credible-frogs-c0463567d4.strapiapp.com/api/albyanats/?populate=*',
         );
         const responseData = await response.json();
         setData(responseData.data[0]); // استخدم "attributes" إذا كانت البيانات تحتوي عليها

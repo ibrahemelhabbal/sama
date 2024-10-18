@@ -22,8 +22,8 @@ function ProDetail() {
       const fetchProject = async () => {
         try {
           const apiEndpoint = location.state?.isCompleted
-            ? `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/completed-projects/${id}?populate=*`
-            : `https://phenomenal-apparel-b276e02b81.strapiapp.com/api/upcoming-projects/${id}?populate=*`;
+            ? `https://credible-frogs-c0463567d4.strapiapp.com/api/completed-projects/${id}?populate=*`
+            : `https://credible-frogs-c0463567d4.strapiapp.com/api/upcoming-projects/${id}?populate=*`;
 
           const response = await axios.get(apiEndpoint);
           setProjectData(response.data.data);

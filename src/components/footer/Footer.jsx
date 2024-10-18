@@ -10,7 +10,7 @@ const Footer = () => {
     const fetchContactInfo = async () => {
       try {
         const response = await fetch(
-          'https://phenomenal-apparel-b276e02b81.strapiapp.com/api/albyanats/?populate=*',
+          'https://credible-frogs-c0463567d4.strapiapp.com/api/albyanats/?populate=*',
         );
         const responseData = await response.json();
         setData(responseData.data[0]); // استخدم "attributes" إذا كانت البيانات تحتوي عليها
