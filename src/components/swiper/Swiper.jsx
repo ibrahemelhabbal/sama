@@ -17,7 +17,7 @@ function ArabicCarousel() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://credible-frogs-c0463567d4.strapiapp.com/api/first-swipers?populate=*',
+          'https://harmonious-memory-891ffc92a8.strapiapp.com/api/first-swipers?populate=*',
         );
         setCarouselItems(response.data.data); // Assuming data is in the format { data: [...] }
       } catch (error) {

@@ -64,7 +64,7 @@ const Homepage = () => {
     const fetchCustomerLogos = async () => {
       try {
         const response = await axios.get(
-          `https://credible-frogs-c0463567d4.strapiapp.com/api/swr-alemlaes?populate=*`,
+          `https://harmonious-memory-891ffc92a8.strapiapp.com/api/swr-alemlaes?populate=*`,
         );
 
         setCustomerLogos(response.data.data);
@@ -96,7 +96,7 @@ const Homepage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://credible-frogs-c0463567d4.strapiapp.com/api/alskshn-althanies/?populate=*`,
+          `https://harmonious-memory-891ffc92a8.strapiapp.com/api/alskshn-althanies/?populate=*`,
         ); // تأكد من إضافة المعرف هنا
         const result = await response.json();
         console.log(result.data);
@@ -114,7 +114,7 @@ const Homepage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://credible-frogs-c0463567d4.strapiapp.com/api/almlf-alteryfies/?populate=*`,
+          `https://harmonious-memory-891ffc92a8.strapiapp.com/api/almlf-alteryfies/?populate=*`,
         ); // تأكد من إضافة المعرف هنا
         const result = await response.json();
 

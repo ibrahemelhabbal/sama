@@ -20,7 +20,7 @@ export default function SerDetail() {
     if (!serviceData) {
       const fetchData = async () => {
         try {
-          const apiUrl = `https://credible-frogs-c0463567d4.strapiapp.com/${id}?populate=*`;
+          const apiUrl = `https://harmonious-memory-891ffc92a8.strapiapp.com/${id}?populate=*`;
           const response = await axios.get(apiUrl);
           setServiceData(response.data.data);
         } catch (error) {

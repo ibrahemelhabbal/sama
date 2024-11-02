@@ -26,12 +26,12 @@ function ExactArabicProjectsCarousel() {
     const fetchProjects = async () => {
       try {
         const upcomingResponse = await axios.get(
-          'https://credible-frogs-c0463567d4.strapiapp.com/api/upcoming-projects?populate=*',
+          'https://harmonious-memory-891ffc92a8.strapiapp.com/api/upcoming-projects?populate=*',
         );
         setUpcomingProjects(upcomingResponse.data.data);
 
         const completedResponse = await axios.get(
-          'https://credible-frogs-c0463567d4.strapiapp.com/api/completed-projects?populate=*',
+          'https://harmonious-memory-891ffc92a8.strapiapp.com/api/completed-projects?populate=*',
         );
         setCompletedProjects(completedResponse.data.data);
       } catch (error) {
